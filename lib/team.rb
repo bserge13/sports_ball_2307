@@ -17,8 +17,9 @@ class Team
   def long_term_players
     long_termers = []
     @roster.each do |player|
-      player.contract_length > 24
-      long_termers << player
+      if player.contract_length >= 24
+        long_termers << player
+      end 
     end
     long_termers
   end
@@ -26,8 +27,9 @@ class Team
   def short_term_players
     short_termers = []
     @roster.each do |player|
-      player.contract_length < 24 
-      short_termers << player
+      if player.contract_length < 24 
+        short_termers << player
+      end 
     end
     short_termers
   end
