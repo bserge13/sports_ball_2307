@@ -17,7 +17,7 @@ class Team
   def long_term_players
     long_termers = []
     @roster.each do |player|
-      if player.contract_length >= 24
+      if player.contract_length > 24
         long_termers << player
       end 
     end
@@ -27,7 +27,7 @@ class Team
   def short_term_players
     short_termers = []
     @roster.each do |player|
-      if player.contract_length < 24 
+      if player.contract_length <= 24 
         short_termers << player
       end 
     end
@@ -46,5 +46,13 @@ class Team
     Hash.new = 
       team[:total_value] = team.total_value,
       team[:player_count] = team.player_count
+  end
+
+  def average_cost_of_player
+
+  end
+
+  def players_by_last_name
+
   end
 end
