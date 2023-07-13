@@ -22,7 +22,6 @@ RSpec.describe Player do
 
   it 'has a monthly cost' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
-
     expect(player.monthly_cost).to eq(1000000)
   end
 
@@ -36,5 +35,19 @@ RSpec.describe Player do
     player = Player.new("Michael Palledorous" , 1000000, 36)
 
     expect(player.total_cost).to eq(36000000)
+  end
+
+  it 'has no nickname' do 
+    player = Player.new("Michael Palledorous" , 1000000, 36)
+
+    expect(player.nickname).to eq(nil)
+  end
+
+  it 'can be given a nickname' do
+    player = Player.new("Michael Palledorous" , 1000000, 36)
+
+    expect(player.nickname).to eq(nil)
+    player.set_nickname!("Squints")
+    expect(player.nickname).to eq("Squints")
   end
 end
