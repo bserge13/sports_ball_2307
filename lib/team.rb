@@ -49,10 +49,18 @@ class Team
   end
 
   def average_cost_of_player
-
+    total = []
+    @roster.each do |player|
+      total << player.monthly_cost * player.contract_length
+    end
+    average = total.sum / @roster.length 
+    "$" + average.to_s
   end
 
   def players_by_last_name
+    @roster.map do |player|
+      player.name.split[1].to_s
+    end
 
   end
 end

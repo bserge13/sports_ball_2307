@@ -62,7 +62,7 @@ RSpec.describe Team do
     expect(team.total_value).to eq(85200000)
   end
 
-  xit 'calculates average cost of player' do 
+  it 'calculates average cost of player' do 
     team = Team.new("Dodgers", "Los Angeles")
     player_1 = Player.new("Michael Palledorous" , 1000000, 36)
     player_2 = Player.new("Kenny DeNunez", 500000, 24)
@@ -77,7 +77,7 @@ RSpec.describe Team do
     expect(team.average_cost_of_player).to eq("$21,300,000")
   end
 
-  xit 'lists players by last name' do 
+  it 'lists players by last name' do 
     team = Team.new("Dodgers", "Los Angeles")
     player_1 = Player.new("Michael Palledorous" , 1000000, 36)
     player_2 = Player.new("Kenny DeNunez", 500000, 24)
